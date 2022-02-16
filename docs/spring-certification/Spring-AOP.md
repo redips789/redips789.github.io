@@ -31,9 +31,11 @@ In any application, there is some generic functionality that is needed in many p
 ## What is a pointcut, a join point, an advice, an aspect, weaving?
 ### Pointcut
 A point-cut selects one or more join points out of the set of all join points in an application.
+
 ![Pointcut](/docs/assets/images/Pointcut.jpg)
 ### Join Point
 A point during the execution of a program, such as the execution of a method or the handling of an exception. In Spring AOP, a join point always represents a method execution.
+
 ![Pointcut](/docs/assets/images/Joint%20Points.jpg)
 ### Advice
 Action taken by an aspect at a particular join point. Types:
@@ -108,6 +110,7 @@ Limitations of CGLIB proxies are:
 | @annotation | It limits matching to join points where the subject of the join point has the given annotation.|
 
 Example:
+
 ![Pointcut](/docs/assets/images/AspectJ%20pointcut%20expression.jpg)
 
 Used designator – **execution.**
