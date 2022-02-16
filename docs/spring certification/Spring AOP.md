@@ -34,7 +34,7 @@ A point-cut selects one or more join points out of the set of all join points in
 ![Pointcut](/docs/assets/images/Pointcut.jpg)
 ### Join Point
 A point during the execution of a program, such as the execution of a method or the handling of an exception. In Spring AOP, a join point always represents a method execution.
-![Pointcut](/docs/assets/images/Joint Points.jpg)
+![Pointcut](/docs/assets/images/Joint%20Points.jpg)
 ### Advice
 Action taken by an aspect at a particular join point. Types:
 - Before – advice is executed first and then it calls the Target method
