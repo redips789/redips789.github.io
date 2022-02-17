@@ -32,11 +32,11 @@ In any application, there is some generic functionality that is needed in many p
 ### Pointcut
 A point-cut selects one or more join points out of the set of all join points in an application.
 
-![Pointcut](/docs/assets/images/Pointcut.jpg)
+![Pointcut](../assets/images/Pointcut.jpg)
 ### Join Point
 A point during the execution of a program, such as the execution of a method or the handling of an exception. In Spring AOP, a join point always represents a method execution.
 
-![Pointcut](/docs/assets/images/Joint_Points.png)
+![Pointcut](../assets/images/Join%20Points.jpg)
 ### Advice
 Action taken by an aspect at a particular join point. Types:
 - Before – advice is executed first and then it calls the Target method
@@ -119,7 +119,7 @@ Limitations of CGLIB proxies are:
 
 Example:
 
-![Pointcut](/docs/assets/images/AspectJ%20pointcut%20expression.jpg)
+![Pointcut](../assets/images/AspectJ%20pointcut%20expression.jpg)
 
 Used designator – **execution.**
 
