@@ -98,7 +98,7 @@ Limitations of CGLIB proxies are:
 ## If shown pointcut expressions, would you understand them?
 
 **Writing point-cuts:**
-- \<designators\> (\<method pattern>)
+- \<designators\> (\<method pattern\>)
 - Can chain together to create composite pointcuts by using operators: &&, ||, !
 - Method pattern:
 [Modifiers] Return Type [Class Type] MethodName ([Arguments]) [throws ExceptionType]
