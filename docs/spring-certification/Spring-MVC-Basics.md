@@ -5,10 +5,11 @@ tags:
 - Spring
 - Spring MVC Basics
 - Spring Professional Certification
-  toc: true
-  toc_label: "My Table of Contents"
-  toc_icon: "cog"
-  classes: wide
+
+toc: true
+toc_label: "My Table of Contents"
+toc_icon: "cog"
+classes: wide
 ---
 
 ## What is the @Controller annotation used for?
