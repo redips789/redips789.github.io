@@ -1,0 +1,127 @@
+---
+title: Spring MVC Basics
+search: true
+tags:
+- Spring
+- Spring MVC Basics
+- Spring Professional Certification
+  toc: true
+  toc_label: "My Table of Contents"
+  toc_icon: "cog"
+  classes: wide
+---
+
+## What is the @Controller annotation used for?
+
+The @Controller annotation is a specialization of the @Component annotation. In a web application, the **controllers work between the web layer and the core application layer.** In the Spring MVC framework, controllers are also more like POJO classes with methods; **these methods are known as handlers**, because these are annotated with the @RequestMapping annotation.
+You could also use the **@Component** annotation instead of **@Controller** to create Spring beans in a web application, but in this case, that bean does not have the capability of the Spring MVC framework such as **exception handling at web layer, handler mapping**, and so on.
+
+## How is an incoming request mapped to a controller and mapped to a method?
+
+When a request is issued to the application:
+- DispatcherServlet of the application receives the request.
+- DispatcherServlet maps the request to a method in a controller.
+- DispatcherServlet holds a list of classes implementing the HandlerMapping interface.
+- DispatcherServlet dispatches the request to the controller.
+- The method in the controller is executed.
+  
+/articles/new 
+Dispatcher servlet: / 
+Controller: /articles 
+Method: /new
+
+## What is the difference between @RequestMapping and @GetMapping?
+
+@GetMapping is a composed annotation that acts as a shortcut for @RequestMapping(method = RequestMethod.GET).
+
+## What is @RequestParam used for?
+
+```java
+@Controller 
+public  class  AccountController {
+    @GetMapping(value = "/account")
+    public String getAccountDetails (ModelMap model, HttpServletRequest request) {
+        String accountId = request.getParameter("accountId");
+        Account account = accountService.findOne(Long.valueOf(accountId));
+        model.put("account", account);
+        return "accountDetails";
+    } 
+}
+```
+
+The @RequestParam annotation is used to annotate parameters to handler methods in order to bind request parameters to method parameters.
+Assume there is a controller method with the following signature and annotations:
+
+```java
+@RequestMapping("/greeting")
+public String greeting(@RequestParam(name="name", required=false) String inName) {
+        ...
+}
+```
+
+If then a request is sent to the URL http://localhost:8080/greeting?name=Ivan then the inName method parameter will contain the string “Ivan”.
+
+## What are the differences between @RequestParam and @PathVariable?
+
+Spring MVC allows you to pass parameters in the URI instead of passing them through request parameters. The passed values can be extracted from the request URLs. It is based on URI templates. It allows clean URLs without request parameters. The following is an example:
+
+```java
+@Controller
+public class AccountController {
+    @GetMapping("/accounts/{accountId}")
+    public String show(@PathVariable("accountId") long accountId, Model model) {
+        Account account = accountService.findOne(accountId);
+        model.put("account", account);
+        return "accountDetails";
+    }
+  ...
+}
+```
+
+**Difference
+The difference between the @RequestParam annotation and the @PathVariable annotation is that they map different parts of request URLs to handler method arguments.
+
+## What are the ready-to-use argument types you can use in a controller method?
+
+- WebRequest
+- ServletRequest
+- ServletResponse
+- HttpSession
+- Principle
+- HttpMethod
+- Locale
+- TimeZone
+- java.io
+- HttpEntity
+- Collections, like Map<>
+- Errors
+- BindingResult
+- SessionStatus
+- UriComponentsbuilder
+
+###What other annotations might you use on a controller method parameter?
+(You can ignore form-handling annotations for this exam)
+
+- @PathVariable
+- @MatrixVariable: key-value pair in url
+- @RequestParam
+- @CookieValue
+- @RequestBody
+- @RequestHeader
+- @RequestPart: “multipart/form-data”
+- @ModelAttribute
+- @SessionAttribute
+- @SessionAttributes
+- @RequestAttribute
+
+## What are some valid return types of a controller method?
+
+- HttpEntity
+- ResponseEntity
+- HttpHeaders
+- String
+- View
+- Map<>
+- ModelAndView
+- void
+- CompletableFuture | CompletionStage: Asynchronous
