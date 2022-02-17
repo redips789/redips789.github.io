@@ -1,3 +1,16 @@
+---
+title: Spring Data JPA
+search: true
+tags:
+- Spring
+- Spring Data JPA
+- Spring Professional Certification
+  toc: true
+  toc_label: "My Table of Contents"
+  toc_icon: "cog"
+  classes: wide
+---
+
 ## What is a Spring Data Repository interface?
 
 An instant repository, also known as a Spring Data repository, is a repository that need no implementation and that supports the basic CRUD (create, read, update and delete) operations. Such a repository is declared as an interface that typically extend the Repository interface or an interface extending the Repository interface. Annotating an interface with **@RepositoryDefinition** will cause the same behaviour as extending Repository.
