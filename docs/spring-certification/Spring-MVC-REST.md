@@ -1,7 +1,7 @@
 ---
-toc: true
-toc_label: "My Table of Contents"
-toc_icon: "cog"
+
+title: Spring MVC Basics
+
 ---
 
 ## What does REST stand for?
