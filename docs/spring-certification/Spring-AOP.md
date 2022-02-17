@@ -148,10 +148,10 @@ Working with packages:
   and com
 - execution(* *..bankapp.*.*(..)): Any sub-package called bankapp
 
-###execution
+### execution
 
 The execution pointcut designator matches method execution join points. This is the most commonly used pointcut designator in Spring AOP.
-###within
+### within
 
 The within pointcut designator matches join points located in one or more classes, optionally specifying the package(s) in which the class(es) is/are located.
 within(se..MySuperServiceImpl)
@@ -163,7 +163,7 @@ The pattern specifying which join points to select consists of the following par
 
 **Class**. Class(es) in which join points are to be selected. Wildcard * may be used. Join points in subclasses of the specified class will also be matched.
 
-###this
+### this
 The this pointcut designator matches all join points where the currently executing object is of specified type (class or interface). With Spring AOP, this will be the proxy object.
 
 this(MySuperService)
@@ -171,14 +171,14 @@ this(MySuperService)
 In this example, MySuperService is an interface. The above pointcut expression will match join points in proxy objects that implement the MySuperService interface.
 The pattern specifying which join points to select only consists of a single type. **Wildcards cannot be used in type names.**
 
-###target
+### target
 The target pointcut designator matches all join point where the target object, for instance the object on which a method call is being made, is of specified type (class or interface). With Spring AOP, the target object will reference the Spring bean being proxied.
 
 target(MySuperServiceImpl)
 
 The pattern specifying which join points to select only consists of a single type. **Wildcards
 cannot be used in type names.**
-###args
+### args
 The args pointcut designator matches join points, in Spring AOP method execution, where the argument(s) are of the specified type(s).
 args(long, long)
 The above example selects join points where the arguments are two long integers.
@@ -194,29 +194,29 @@ Example selects all join points where the arguments are of any type from the jav
 
 Spring AOP is a proxy-based system and differentiates between the **proxy object itself** (which is bound to **this**) and the **target object behind the proxy** (which is bound to **target**).
 
-###@target
+### @target
 
 The @target pointcut designator matches join points in classes annotated with the specified annotation(s).
 @target (org.springframework.stereotype.Service)
 The above example selects all join points in all classes annotated with the Spring @Service annotation.
 
-###@args
+### @args
 
 The @args pointcut designator matches join points where an argument type (class) is annotated with the specified annotation. Note that it is not the argument that is to be annotated, but the class.
 
-###@within
+### @within
 
 The @within pointcut designator matches join points in classes annotated with specified annotation.
 @within(org.springrframework.stereotype.Service)
 Above pointcut will select all join points in all classes annotated with the Spring @Service annotation.
 
-###@annotation
+### @annotation
 
 The @annotation pointcut designator matches join points in methods annotated with specified annotation.
 @annotation(se.custom.test.MySuperSecurityAnnotation)
 The above pointcut will select all join points in all methods annotated with the @MySuperSecurityAnnotation annotation in all classes.
 
-###bean
+### bean
 
 This pointcut designator selects all join points within a Spring bean.
 bean(mySuperService)
