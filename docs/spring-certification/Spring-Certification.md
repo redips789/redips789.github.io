@@ -6,4 +6,4 @@ Spring certification notes
 
 [4. Spring Data JPA](Spring-Data-JPA.md)
 
-[5. Spring MVC Basics](Spring%20MVC%20Basics.md)
+[5. Spring MVC Basics](Spring-MVC-Basics.md)
