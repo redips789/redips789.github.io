@@ -1,10 +1,8 @@
 ---
 title: Spring MVC REST
-search: true
 toc: true
 toc_label: "My Table of Contents"
 toc_icon: "cog"
-classes: wide
 ---
 
 ## What does REST stand for?
