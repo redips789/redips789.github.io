@@ -36,7 +36,7 @@ A point-cut selects one or more join points out of the set of all join points in
 ### Join Point
 A point during the execution of a program, such as the execution of a method or the handling of an exception. In Spring AOP, a join point always represents a method execution.
 
-![Pointcut](/docs/assets/images/Joint%20Points.jpg)
+![Pointcut](/docs/assets/images/Joint_Points.png)
 ### Advice
 Action taken by an aspect at a particular join point. Types:
 - Before – advice is executed first and then it calls the Target method
@@ -48,8 +48,10 @@ Action taken by an aspect at a particular join point. Types:
   will never execute if the target doesn't throw any exception in the application
 - Around – executed two times, first time it is executed before the advised method and
   second time it is executed after advised method is invoked.
+
 ### Aspect
 An aspect is the merger of advice and point-cuts. Taken together, advice and point-cuts define everything there is to know about an aspect – what it does and where and when it does it.
+
 ### Weawing
 Weaving is the process of applying aspects to a target object to create a new proxied object. The aspects are woven into the target object at the specified join points. The weaving can take place at several points in the target object’s lifetime:
 - Compile time
