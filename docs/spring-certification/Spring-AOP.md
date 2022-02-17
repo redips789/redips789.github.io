@@ -66,7 +66,9 @@ Spring uses proxy objects to implement the method invocation interception part o
 Spring AOP uses two slightly different types of proxy techniques:
 - JDK dynamic proxies
 - CGLIB proxies
+
 ## Which are the limitations of the two proxy-types?
+
 There is one limitation common to both proxy types:
 - Invocation of advised methods on self.
 
@@ -84,13 +86,17 @@ Limitations of CGLIB proxies are:
 - Class for which a proxy is to be created must not be final
 - Method(s) in class for which a proxy is to be created must not be final
 - Only public methods will be proxied
+
 ## How many advice types does Spring support? Can you name each one?
+ 
 - @Before
 - @AfterReturning
 - @AfterThrowing
 - @After
 - @Around
+
 ## If shown pointcut expressions, would you understand them?
+
 **Writing point-cuts:**
 - \<designators\> (\<method pattern>)
 - Can chain together to create composite pointcuts by using operators: &&, ||, !
@@ -143,8 +149,10 @@ Working with packages:
 - execution(* *..bankapp.*.*(..)): Any sub-package called bankapp
 
 ###execution
+
 The execution pointcut designator matches method execution join points. This is the most commonly used pointcut designator in Spring AOP.
 ###within
+
 The within pointcut designator matches join points located in one or more classes, optionally specifying the package(s) in which the class(es) is/are located.
 within(se..MySuperServiceImpl)
 
@@ -215,6 +223,7 @@ bean(mySuperService)
 The above pointcut will select all join points in the Spring bean named “mySuperService”.
 
 ## What is the JoinPoint argument used for?
+
 As seen in earlier examples, a parameter of the type JoinPoint can be added to methods implementing the following types of advice:
 - Before
 - After returning
@@ -231,6 +240,7 @@ Examples of static information:
 Examples of dynamic information available from the JoinPoint object:
 - Target object
 - Currently executing object
+
 ## What is a ProceedingJoinPoint? Which advice type is it used with?
 The following example, also seen earlier, shows the use of the ProceedingJoinPoint class as a parameter to an **around advice. This type is used as the first parameter of a method implementing an around advice.**
 ProceedingJoinPoint is a subclass of JoinPoint.
