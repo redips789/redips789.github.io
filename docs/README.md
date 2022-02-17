@@ -1,3 +1,3 @@
 Welcome
 
-[Spring certification notes](spring-certification/spring-certification.md)
+[Spring certification notes](spring-certification/Spring-Certification.md)
