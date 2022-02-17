@@ -7,7 +7,6 @@ toc_icon: "cog"
 classes: wide
 ---
 
-
 ## What does REST stand for?
 
 To understand what REST is all about, it helps to break down the acronym into its constituent parts:
