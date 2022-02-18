@@ -1,16 +1,16 @@
 ---
-title: Spring MVC Basics
-search: true
-tags:
-- Spring
-- Spring MVC Basics
-- Spring Professional Certification
 
-toc: true
-toc_label: "My Table of Contents"
-toc_icon: "cog"
-classes: wide
+title: Spring MVC Basics
+
 ---
+
+* [What is the @Controller annotation used for?](#what-is-the-controller-annotation-used-for)
+* [How is an incoming request mapped to a controller and mapped to a method?](#how-is-an-incoming-request-mapped-to-a-controller-and-mapped-to-a-method)
+* [What is the difference between @RequestMapping and @GetMapping?](#what-is-the-difference-between-requestmapping-and-getmapping)
+* [What is @RequestParam used for?](#what-is-requestparam-used-for)
+* [What are the differences between @RequestParam and @PathVariable?](#what-are-the-differences-between-requestparam-and-pathvariable)
+* [What are the ready-to-use argument types you can use in a controller method?](#what-are-the-ready-to-use-argument-types-you-can-use-in-a-controller-method)
+* [What are some valid return types of a controller method?](#what-are-some-valid-return-types-of-a-controller-method)
 
 ## What is the @Controller annotation used for?
 
@@ -79,7 +79,7 @@ public class AccountController {
 }
 ```
 
-**Difference
+**Difference**
 The difference between the @RequestParam annotation and the @PathVariable annotation is that they map different parts of request URLs to handler method arguments.
 
 ## What are the ready-to-use argument types you can use in a controller method?

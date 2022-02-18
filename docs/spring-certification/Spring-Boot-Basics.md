@@ -4,6 +4,23 @@ title: Spring Boot Basics
 
 ---
 
+* [What is Spring Boot?](#what-is-spring-boot)
+* [What are the advantages of using Spring Boot?](#what-are-the-advantages-of-using-spring-boot)
+* [What things affect what Spring Boot sets up?](#what-things-affect-what-spring-boot-sets-up)
+* [What is a Spring Boot starter? Why is it useful?](#what-is-a-spring-boot-starter-why-is-it-useful)
+* [Spring Boot supports both properties and YML files. Would you recognize and understand them if you saw them?](#spring-boot-supports-both-properties-and-yml-files-would-you-recognize-and-understand-them-if-you-saw-them)
+* [Can you control logging with Spring Boot? How?](#can-you-control-logging-with-spring-boot-how)
+   * [Controlling Log levels](#controlling-log-levels)
+   * [File Output](#file-output)
+   * [Color-coding of Log levels](#color-coding-of-log-levels)
+* [Where does Spring Boot look for application.properties file by default?](#where-does-spring-boot-look-for-applicationproperties-file-by-default)
+* [How do you define profile specific property files?](#how-do-you-define-profile-specific-property-files)
+* [How do you access the properties defined in the property files?](#how-do-you-access-the-properties-defined-in-the-property-files)
+* [What properties do you have to define in order to configure external MySQL?](#what-properties-do-you-have-to-define-in-order-to-configure-external-mysql)
+* [How do you configure default schema and initial data?](#how-do-you-configure-default-schema-and-initial-data)
+* [What is a fat jar? How is it different from original jar?](#what-is-a-fat-jar-how-is-it-different-from-original-jar)
+* [What embedded containers does Spring Boot support?](#what-embedded-containers-does-spring-boot-support)
+
 ## What is Spring Boot?
 
 Spring Boot is a set of preconfigured modules that works on top of Spring Framework and simplifies configuring a Spring application.

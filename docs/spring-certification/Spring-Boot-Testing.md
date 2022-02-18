@@ -4,6 +4,14 @@ title: Spring Boot Testing
 
 ---
 
+* [When do you want to use @SpringBootTest annotation?](#when-do-you-want-to-use-springboottest-annotation)
+* [What does @SpringBootTest auto-configure?](#what-does-springboottest-auto-configure)
+* [What dependencies does spring-boot-starter-test brings to the classpath?](#what-dependencies-does-spring-boot-starter-test-brings-to-the-classpath)
+* [How do you perform integration testing with @SpringBootTest for a web application?](#how-do-you-perform-integration-testing-with-springboottest-for-a-web-application)
+* [When do you want to use @WebMvcTest? What does it auto-configure?](#when-do-you-want-to-use-webmvctest-what-does-it-auto-configure)
+* [What are the differences between @MockBean and @Mock?](#what-are-the-differences-between-mockbean-and-mock)
+* [When do you want @DataJpaTest for? What does it auto-configure?](#when-do-you-want-datajpatest-for-what-does-it-auto-configure)
+
 ## When do you want to use @SpringBootTest annotation?
 
 the test context framework will be searching for the class annotated with `@SpringBootApplication` (if no specific configuration is passed) and will use that to actually start the application.

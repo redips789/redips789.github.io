@@ -4,6 +4,39 @@ title: Spring Container Dependency and IOC
 
 ---
 
+* [What is dependency injection and what are the advantages of using it?](#what-is-dependency-injection-and-what-are-the-advantages-of-using-it)
+* [What is an interface andwhat are the advantages of making use of them in Java?](#what-is-an-interface-andwhat-are-the-advantages-of-making-use-of-them-in-java)
+* [What is an ApplicationContext?](#what-is-an-applicationcontext)
+* [How are you going to create a new instance of an ApplicationContext?](#how-are-you-going-to-create-a-new-instance-of-an-applicationcontext)
+* [Can you describe the lifecycle of a Spring Bean in an ApplicationContext?](#can-you-describe-the-lifecycle-of-a-spring-bean-in-an-applicationcontext)
+* [How are you going to create an ApplicationContext in an integration test?](#how-are-you-going-to-create-an-applicationcontext-in-an-integration-test)
+    * [Web Application Context](#web-application-context)
+* [What is the preferred way to close an application context? Does Spring Boot do this for you?](#what-is-the-preferred-way-to-close-an-application-context-does-spring-boot-do-this-for-you)
+    * [Web Application](#web-application)
+    * [Spring Boot Closing Application Context](#spring-boot-closing-application-context)
+* [Are beans lazily or eagerly instantiated by default? How do you alter this behavior?](#are-beans-lazily-or-eagerly-instantiated-by-default-how-do-you-alter-this-behavior)
+* [What is a property source? How would you use @PropertySource?](#what-is-a-property-source-how-would-you-use-propertysource)
+* [What is a BeanFactoryPostProcessor and what is it used for? When is it invoked?](#what-is-a-beanfactorypostprocessor-and-what-is-it-used-for-when-is-it-invoked)
+* [What is a BeanPostProcessor and how is it different to a BeanFactoryPostProcessor? What do they do? When are they called?](#what-is-a-beanpostprocessor-and-how-is-it-different-to-a-beanfactorypostprocessor-what-do-they-do-when-are-they-called)
+* [What does component-scanning do?](#what-does-component-scanning-do)
+* [What is the behavior of the annotation @Autowired with regards to field injection, constructor injection and method injection?](#what-is-the-behavior-of-the-annotation-autowired-with-regards-to-field-injection-constructor-injection-and-method-injection)
+* [How does the @Qualifier annotation complement the use of @Autowired?](#how-does-the-qualifier-annotation-complement-the-use-of-autowired)
+* [What is a proxy object and what are the two different types of proxies Spring can create?](#what-is-a-proxy-object-and-what-are-the-two-different-types-of-proxies-spring-can-create)
+* [What does the @Bean annotation do?](#what-does-the-bean-annotation-do)
+* [What is the default bean id if you only use @Bean? How can you override this?](#what-is-the-default-bean-id-if-you-only-use-bean-how-can-you-override-this)
+* [Why are you not allowed to annotate a final class with @Configuration](#why-are-you-not-allowed-to-annotate-a-final-class-with-configuration)
+* [How do you configure profiles? What are possible use cases where they might be useful?](#how-do-you-configure-profiles-what-are-possible-use-cases-where-they-might-be-useful)
+* [Can you use @Bean together with @Profile?](#can-you-use-bean-together-with-profile)
+* [Can you use @Component together with @Profile?](#can-you-use-component-together-with-profile)
+* [How many profiles can you have?](#how-many-profiles-can-you-have)
+* [How do you inject scalar/literal values into Spring beans?](#how-do-you-inject-scalarliteral-values-into-spring-beans)
+* [What is Spring Expression Language (SpEL for short)?](#what-is-spring-expression-language-spel-for-short)
+* [What is the Environment abstraction in Spring?](#what-is-the-environment-abstraction-in-spring)
+* [Where can properties in the environment come from – there are many sources for properties – check the documentation if not sure. Spring Boot adds even more.](#where-can-properties-in-the-environment-come-from--there-are-many-sources-for-properties--check-the-documentation-if-not-sure-spring-boot-adds-even-more)
+* [What can you reference using SpEL?](#what-can-you-reference-using-spel)
+* [What is the difference between $ and # in @Value expressions?](#what-is-the-difference-between--and--in-value-expressions)
+
+
 ## What is dependency injection and what are the advantages of using it?
 
 Dependency injection is a design pattern that promotes loose coupling between the Spring components – that is, between the different collaborating POJOs. So by applying DI to your complex programming, your code will become simpler, easier to understand, and easier to test.
@@ -56,7 +89,7 @@ Spring provides you with a web-aware implementation of the ApplicationContext in
 - AnnotationConfigWebApplicationContext
 
 ApplicationContext context = new FileSystemXmlApplicationContext("c:/knight.xml"); ApplicationContext context = new ClassPathXmlApplicationContext("knight.xml");
-ApplicationContext context = new AnnotationConfigApplicationContext( com.springinaction. knights.conf ig.KnightConf ig.c lass);
+ApplicationContext context = new AnnotationConfigApplicationContext( com.springinaction.knights.config.KnightConfig.class);
 
 ## Can you describe the lifecycle of a Spring Bean in an ApplicationContext?
 

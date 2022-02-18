@@ -1,15 +1,14 @@
 ---
+
 title: Spring Data JPA
-search: true
-tags:
-- Spring
-- Spring Data JPA
-- Spring Professional Certification
-  toc: true
-  toc_label: "My Table of Contents"
-  toc_icon: "cog"
-  classes: wide
+
 ---
+
+* [What is a Spring Data Repository interface?](#what-is-a-spring-data-repository-interface)
+* [How do you define a Spring Data Repository interface? Why is it an interface not a class?](#how-do-you-define-a-spring-data-repository-interface-why-is-it-an-interface-not-a-class)
+* [What is the naming convention for finder methods in a Spring Data Repository interface?](#what-is-the-naming-convention-for-finder-methods-in-a-spring-data-repository-interface)
+* [How are Spring Data repositories implemented by Spring at runtime?](#how-are-spring-data-repositories-implemented-by-spring-at-runtime)
+* [What is @Query used for?](#what-is-query-used-for)
 
 ## What is a Spring Data Repository interface?
 

@@ -4,6 +4,23 @@ title: Spring Security
 
 ---
 
+* [What are authentication and authorization? Which must come first?](#what-are-authentication-and-authorization-which-must-come-first)
+  * [Authorization](#authorization)
+* [Which must come first?](#which-must-come-first)
+* [Is security a cross cutting concern? How is it implemented internally?](#is-security-a-cross-cutting-concern-how-is-it-implemented-internally)
+* [What is the delegating filter proxy?](#what-is-the-delegating-filter-proxy)
+* [What is the security filter chain?](#what-is-the-security-filter-chain)
+* [What is a security context?](#what-is-a-security-context)
+* [What does the ** pattern in an antMatcher or mvcMatcher do?](#what-does-the--pattern-in-an-antmatcher-or-mvcmatcher-do)
+* [Why is the usage of mvcMatcher recommended over antMatcher?](#why-is-the-usage-of-mvcmatcher-recommended-over-antmatcher)
+* [Does Spring Security support password encoding?](#does-spring-security-support-password-encoding)
+* [Why do you need method security? What type of object is typically secured at the method level (think of its purpose not its Java type).](#why-do-you-need-method-security-what-type-of-object-is-typically-secured-at-the-method-level-think-of-its-purpose-not-its-java-type)
+* [What do @PreAuthorized and @RolesAllowed do? What is the difference between them?](#what-do-preauthorized-and-rolesallowed-do-what-is-the-difference-between-them)
+  * [PreAuthorize](#preauthorize)
+  * [Roles Allowed](#roles-allowed)
+* [How are these annotations implemented?](#how-are-these-annotations-implemented)
+* [In which security annotation, are you allowed to use SpEL?](#in-which-security-annotation-are-you-allowed-to-use-spel)
+
 ## What are authentication and authorization? Which must come first?
 
 The short explanation of authentication is that it is the process of verifying that, for instance, a user of a computer system is who he/she claims to be. In Spring Security, the authentication process consists of the following steps quoted from the Spring Security reference:

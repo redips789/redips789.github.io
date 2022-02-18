@@ -4,6 +4,21 @@ title: Spring Boot Actuator
 
 ---
 
+* [What value does Spring Boot Actuator provide?](#what-value-does-spring-boot-actuator-provide)
+* [What are the two protocols you can use to access actuator endpoints?](#what-are-the-two-protocols-you-can-use-to-access-actuator-endpoints)
+* [What are the actuator endpoints that are provided out of the box?](#what-are-the-actuator-endpoints-that-are-provided-out-of-the-box)
+* [What is info endpoint for? How do you supply data?](#what-is-info-endpoint-for-how-do-you-supply-data)
+* [How do you change logging level of a package using loggers endpoint?](#how-do-you-change-logging-level-of-a-package-using-loggers-endpoint)
+* [How do you access an endpoint using a tag?](#how-do-you-access-an-endpoint-using-a-tag)
+* [What is metrics for?](#what-is-metrics-for)
+* [How do you create a custom metric?](#how-do-you-create-a-custom-metric)
+* [What is Health Indicator?](#what-is-health-indicator)
+* [What are the Health Indicators that are provided out of the box?](#what-are-the-health-indicators-that-are-provided-out-of-the-box)
+* [What is the Health Indicator status?](#what-is-the-health-indicator-status)
+* [What are the Health Indicator statuses that are provided out of the box?](#what-are-the-health-indicator-statuses-that-are-provided-out-of-the-box)
+* [How do you change the Health Indicator status severity order?](#how-do-you-change-the-health-indicator-status-severity-order)
+* [Why do you want to leverage 3rd-party external monitoring system?](#why-do-you-want-to-leverage-3rd-party-external-monitoring-system)
+
 ## What value does Spring Boot Actuator provide?
 
 The Spring Boot Actuator module provides production-ready features such as monitoring, metrics, health checks, etc. The Spring Boot Actuator enables you to monitor the application using HTTP endpoints and JMX.

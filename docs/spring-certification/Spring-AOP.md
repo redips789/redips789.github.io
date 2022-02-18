@@ -1,15 +1,35 @@
 ---
+
 title: Spring AOP
-search: true
-tags:
-  - Spring
-  - Spring AOP
-  - Spring Professional Certification
-toc: true
-toc_label: "My Table of Contents"
-toc_icon: "cog"
-classes: wide
+
 ---
+
+* [What is the concept of AOP? Which problem does it solve? What is a cross cutting concern?](#what-is-the-concept-of-aop-which-problem-does-it-solve-what-is-a-cross-cutting-concern)
+  * [What is the concept of AOP?](#what-is-the-concept-of-aop)
+  * [Which problem does it solve?](#which-problem-does-it-solve)
+  * [What is cross cutting concern?](#what-is-cross-cutting-concern)
+* [What is a pointcut, a join point, an advice, an aspect, weaving?](#what-is-a-pointcut-a-join-point-an-advice-an-aspect-weaving)
+  * [Pointcut](#pointcut)
+  * [Join Point](#join-point)
+  * [Advice](#advice)
+  * [Aspect](#aspect)
+  * [Weawing](#weawing)
+* [How does Spring solve (implement) a cross cutting concern?](#how-does-spring-solve-implement-a-cross-cutting-concern)
+* [Which are the limitations of the two proxy-types?](#which-are-the-limitations-of-the-two-proxy-types)
+* [How many advice types does Spring support? Can you name each one?](#how-many-advice-types-does-spring-support-can-you-name-each-one)
+* [If shown pointcut expressions, would you understand them?](#if-shown-pointcut-expressions-would-you-understand-them)
+  * [execution](#execution)
+  * [within](#within)
+  * [this](#this)
+  * [target](#target)
+  * [args](#args)
+  * [@target](#target-1)
+  * [@args](#args-1)
+  * [@within](#within-1)
+  * [@annotation](#annotation)
+  * [bean](#bean)
+* [What is the JoinPoint argument used for?](#what-is-the-joinpoint-argument-used-for)
+* [What is a ProceedingJoinPoint? Which advice type is it used with?](#what-is-a-proceedingjoinpoint-which-advice-type-is-it-used-with)
 
 ## What is the concept of AOP? Which problem does it solve? What is a cross cutting concern?
 ### What is the concept of AOP?

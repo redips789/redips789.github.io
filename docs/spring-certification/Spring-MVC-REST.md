@@ -4,6 +4,22 @@ title: Spring MVC Basics
 
 ---
 
+* [What does REST stand for?](#what-does-rest-stand-for)
+* [What is resource?](#what-is-resource)
+* [Is REST secure? What can you do to secure it?](#is-rest-secure-what-can-you-do-to-secure-it)
+* [Is REST scalable and/or interoperable?](#is-rest-scalable-andor-interoperable)
+* [Which HTTP methods does REST use?](#which-http-methods-does-rest-use)
+* [What is an HttpMessageConverter?](#what-is-an-httpmessageconverter)
+* [Is @Controller a stereotype? Is @RestController a stereotype?](#is-controller-a-stereotype-is-restcontroller-a-stereotype)
+* [What is the difference between @Controller and @RestController?](#what-is-the-difference-between-controller-and-restcontroller)
+* [When do you need to use @ResponseBody?](#when-do-you-need-to-use-responsebody)
+* [What are the HTTP status return codes for a successful GET, POST, PUT or DELETE operation?](#what-are-the-http-status-return-codes-for-a-successful-get-post-put-or-delete-operation)
+* [When do you need to use @ResponseStatus?](#when-do-you-need-to-use-responsestatus)
+* [Where do you need to use @ResponseBody? What about @RequestBody?](#where-do-you-need-to-use-responsebody-what-about-requestbody)
+* [If you saw example Controller code, would you understand what it is doing? Could you tell if it was annotated correctly?](#if-you-saw-example-controller-code-would-you-understand-what-it-is-doing-could-you-tell-if-it-was-annotated-correctly)
+* [What Spring Boot starter would you use for a Spring REST application?](#what-spring-boot-starter-would-you-use-for-a-spring-rest-application)
+* [If you saw an example using RestTemplate, would you understand what it is doing?](#if-you-saw-an-example-using-resttemplate-would-you-understand-what-it-is-doing)
+
 ## What does REST stand for?
 
 To understand what REST is all about, it helps to break down the acronym into its constituent parts:
