@@ -6,7 +6,7 @@ title: Spring Security
 
 * [What are authentication and authorization? Which must come first?](#what-are-authentication-and-authorization-which-must-come-first)
   * [Authorization](#authorization)
-* [Which must come first?](#which-must-come-first)
+  * [Which must come first?](#which-must-come-first)
 * [Is security a cross cutting concern? How is it implemented internally?](#is-security-a-cross-cutting-concern-how-is-it-implemented-internally)
 * [What is the delegating filter proxy?](#what-is-the-delegating-filter-proxy)
 * [What is the security filter chain?](#what-is-the-security-filter-chain)

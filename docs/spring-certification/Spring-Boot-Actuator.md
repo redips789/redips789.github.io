@@ -50,7 +50,7 @@ HTTP and JMX
 
 10. `/info` This endpoint will display the public application info. This means that you need to add this information to application.properties. It’s recommended that you add it if you have multiple Spring Boot applications.
 
-11. `/logfile` This endpoint will show the contents of the log file specified by the logging.file property, where you specify the name of the log file (this will be written in the current directory). You can also set the logging.path, where you set the path where the spring.log will be written. By default Spring Boot writes to the console/standard out, and if you specify any of these properties, it will also write everything from the console to the log file. You can stop your application. Go to src/main/resources/application.properties and add this to the very end:
+11. `/logfile` This endpoint will show the contents of the log file specified by the logging.file property, where you specify the name of the log file (this will be written in the current directory). You can also set the logging.path, where you set the path where the spring.log will be written. By default, Spring Boot writes to the console/standard out, and if you specify any of these properties, it will also write everything from the console to the log file. You can stop your application. Go to src/main/resources/application.properties and add this to the very end:
 
     ```properties
     logging.file=mylog.log
@@ -96,7 +96,7 @@ Importantly, You can provide your InfoContributor bean and it will be picked by 
 
 Spring Boot Actuator includes the ability to **view and configure** the log levels of your application at runtime.
 
-You can view either the entire list or an individual logger’s configuration, which is made up of both the explicitly configured logging level as well as the effective logging level given to it by the logging framework.
+You can view either the entire list or an individual logger’s configuration, which is made up of both the explicitly configured logging level and the effective logging level given to it by the logging framework.
 
 - TRACE
 - DEBUG

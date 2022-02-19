@@ -5,7 +5,7 @@ title: Spring Container Dependency and IOC
 ---
 
 * [What is dependency injection and what are the advantages of using it?](#what-is-dependency-injection-and-what-are-the-advantages-of-using-it)
-* [What is an interface andwhat are the advantages of making use of them in Java?](#what-is-an-interface-andwhat-are-the-advantages-of-making-use-of-them-in-java)
+* [What is an interface and what are the advantages of making use of them in Java?](#what-is-an-interface-andwhat-are-the-advantages-of-making-use-of-them-in-java)
 * [What is an ApplicationContext?](#what-is-an-applicationcontext)
 * [How are you going to create a new instance of an ApplicationContext?](#how-are-you-going-to-create-a-new-instance-of-an-applicationcontext)
 * [Can you describe the lifecycle of a Spring Bean in an ApplicationContext?](#can-you-describe-the-lifecycle-of-a-spring-bean-in-an-applicationcontext)
@@ -40,7 +40,7 @@ title: Spring Container Dependency and IOC
 ## What is dependency injection and what are the advantages of using it?
 
 Dependency injection is a design pattern that promotes loose coupling between the Spring components – that is, between the different collaborating POJOs. So by applying DI to your complex programming, your code will become simpler, easier to understand, and easier to test.
-According to the DI pattern, dependent objects are given their dependencies at the time of creation of the objects by some factory or third party. This means that we have to focus on defining the dependencies instead of resolving the dependencies of collaborationg objects in the enterprise application.
+According to the DI pattern, dependent objects are given their dependencies at the time of creation of the objects by some factory or third party. This means that we have to focus on defining the dependencies instead of resolving the dependencies of collaborating objects in the enterprise application.
 Advantages:
 - Reduced coupling between the parts of the application
 - Increase cohesion of the parts of the application
@@ -51,7 +51,7 @@ Advantages:
 - Standardizes parts of application development.
 - Reduces boilerplate code
 
-## What is an interface andwhat are the advantages of making use of them in Java?
+## What is an interface and what are the advantages of making use of them in Java?
 
 A Java (Java 8 and later) interface is a reference that can contain the following:
 - Constants
