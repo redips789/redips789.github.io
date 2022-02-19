@@ -199,7 +199,7 @@ public BlankDisc(@Value("${disc.title}") String title, @Value("${disc.artist}") 
 }
 ```
 
-**In order to use placeholder values, you must configure either a `PropertyPlaceholderConfigurer` bean or a `PropertySourcesPlaceholderConfigurer`** bean. The following `@Bean` method configures `PropertySourcesPlaceholderConfigurer` in Java configuration:
+**In order to use placeholder values, you must configure either a `PropertyPlaceholderConfigurer` bean (deprecated, use `PropertySourcesPlaceholderConfigurer` instead ) or a `PropertySourcesPlaceholderConfigurer`** bean. The following `@Bean` method configures `PropertySourcesPlaceholderConfigurer` in Java configuration:
 
 ```java
 @Bean
