@@ -109,11 +109,11 @@ Limitations of CGLIB proxies are:
 
 ## How many advice types does Spring support? Can you name each one?
  
-- @Before
-- @AfterReturning
-- @AfterThrowing
-- @After
-- @Around
+- `@Before`
+- `@AfterReturning`
+- `@AfterThrowing`
+- `@After`
+- `@Around`
 
 ## If shown pointcut expressions, would you understand them?
 
@@ -127,21 +127,21 @@ Limitations of CGLIB proxies are:
 
 | Spring supported AspectJ designators | Description  |
 | ------- | --- |
-| execution | It matches the join points by method executions, it is primary pointcut designator supported by Spring AOP. |
-| within | It matches the join points by limit within certain types.|
-| this | It limits matching to join points where the bean reference is an instance of the given type. |
-| target | It limits matching to join points where the target object is of a given type.|
-| args | It limits matching to join points where the arguments are instances of the given types.|
-| @target | It limits matching to join points where the target object has an annotation of the given type. |
-| @args | It limits matching to join points where the runtime, type of the actual arguments passed have annotations of the given type.|
-| @within | It limits matching to join points where the declared type of the target object has the given type annotation.|
-| @annotation | It limits matching to join points where the subject of the join point has the given annotation.|
+| `execution` | It matches the join points by method executions, it is primary pointcut designator supported by Spring AOP. |
+| `within` | It matches the join points by limit within certain types.|
+| `this` | It limits matching to join points where the bean reference is an instance of the given type. |
+| `target` | It limits matching to join points where the target object is of a given type.|
+| `args` | It limits matching to join points where the arguments are instances of the given types.|
+| `@target` | It limits matching to join points where the target object has an annotation of the given type. |
+| `@args` | It limits matching to join points where the runtime, type of the actual arguments passed have annotations of the given type.|
+| `@within` | It limits matching to join points where the declared type of the target object has the given type annotation.|
+| `@annotation` | It limits matching to join points where the subject of the join point has the given annotation.|
 
 Example:
 
 ![Pointcut](../assets/images/AspectJ%20pointcut%20expression.jpg)
 
-Used designator – **execution.**
+Used designator – `execution`
 
 An asterisk at the beginning of the expression means that **method can return any type.**
 As method arguments (..) means that the pointcut can select a method whose name is transfer() **with no parameter or any number of parameters.**
@@ -158,7 +158,7 @@ Restrict by interface:
 - execution(void com.packt.patterninspring.chapter6.bankapp.service.TransferService.transfer(*)): Any void transfer() method taking one argument, in any object implementing TransferService, it is more flexible choice--works if implementation changes.
 
 Using Annotations:
-- execution(@javax.annotation.security.RolesAllowed void transfer*(..)): Any void
+- execution(`@javax.annotation.security.RolesAllowed` void transfer*(..)): Any void
   method whose name starts with transfer that is annotated with the @RolesAllowed
   annotation.
 
@@ -170,10 +170,11 @@ Working with packages:
 
 ### execution
 
-The execution pointcut designator matches method execution join points. This is the most commonly used pointcut designator in Spring AOP.
+The `execution` pointcut designator matches method execution join points. This is the most commonly used pointcut designator in Spring AOP.
+
 ### within
 
-The within pointcut designator matches join points located in one or more classes, optionally specifying the package(s) in which the class(es) is/are located.
+The `within` pointcut designator matches join points located in one or more classes, optionally specifying the package(s) in which the class(es) is/are located.
 within(se..MySuperServiceImpl)
 
 The pattern specifying which join points to select consists of the following parts:
@@ -184,7 +185,7 @@ The pattern specifying which join points to select consists of the following par
 **Class**. Class(es) in which join points are to be selected. Wildcard * may be used. Join points in subclasses of the specified class will also be matched.
 
 ### this
-The this pointcut designator matches all join points where the currently executing object is of specified type (class or interface). With Spring AOP, this will be the proxy object.
+The `this` pointcut designator matches all join points where the currently executing object is of specified type (class or interface). With Spring AOP, this will be the proxy object.
 
 this(MySuperService)
 
@@ -192,19 +193,19 @@ In this example, MySuperService is an interface. The above pointcut expression w
 The pattern specifying which join points to select only consists of a single type. **Wildcards cannot be used in type names.**
 
 ### target
-The target pointcut designator matches all join point where the target object, for instance the object on which a method call is being made, is of specified type (class or interface). With Spring AOP, the target object will reference the Spring bean being proxied.
+The `target` pointcut designator matches all join point where the target object, for instance the object on which a method call is being made, is of specified type (class or interface). With Spring AOP, the target object will reference the Spring bean being proxied.
 
 target(MySuperServiceImpl)
 
 The pattern specifying which join points to select only consists of a single type. **Wildcards
 cannot be used in type names.**
 ### args
-The args pointcut designator matches join points, in Spring AOP method execution, where the argument(s) are of the specified type(s).
+The `args` pointcut designator matches join points, in Spring AOP method execution, where the argument(s) are of the specified type(s).
 args(long, long)
 The above example selects join points where the arguments are two long integers.
 
-**The .. wildcard may be used to specify zero or more parameters of arbitrary type.
-The * wildcard can be used to specify one parameter of any type.
+**The `..` wildcard may be used to specify zero or more parameters of arbitrary type.
+The `*` wildcard can be used to specify one parameter of any type.
 Package information may be included in the pattern specifying which join points to select.**
 
 args(java.util.*)
@@ -212,27 +213,27 @@ Example selects all join points where the arguments are of any type from the jav
 
 **this vs target**
 
-Spring AOP is a proxy-based system and differentiates between the **proxy object itself** (which is bound to **this**) and the **target object behind the proxy** (which is bound to **target**).
+Spring AOP is a proxy-based system and differentiates between the **proxy object itself** (which is bound to `this`) and the **target object behind the proxy** (which is bound to `target`).
 
 ### @target
 
-The @target pointcut designator matches join points in classes annotated with the specified annotation(s).
+The `@target` pointcut designator matches join points in classes annotated with the specified annotation(s).
 @target (org.springframework.stereotype.Service)
-The above example selects all join points in all classes annotated with the Spring @Service annotation.
+The above example selects all join points in all classes annotated with the Spring `@Service` annotation.
 
 ### @args
 
-The @args pointcut designator matches join points where an argument type (class) is annotated with the specified annotation. Note that it is not the argument that is to be annotated, but the class.
+The `@args` pointcut designator matches join points where an argument type (class) is annotated with the specified annotation. Note that it is not the argument that is to be annotated, but the class.
 
 ### @within
 
-The @within pointcut designator matches join points in classes annotated with specified annotation.
+The `@within` pointcut designator matches join points in classes annotated with specified annotation.
 @within(org.springrframework.stereotype.Service)
-Above pointcut will select all join points in all classes annotated with the Spring @Service annotation.
+Above pointcut will select all join points in all classes annotated with the Spring `@Service` annotation.
 
 ### @annotation
 
-The @annotation pointcut designator matches join points in methods annotated with specified annotation.
+The `@annotation` pointcut designator matches join points in methods annotated with specified annotation.
 @annotation(se.custom.test.MySuperSecurityAnnotation)
 The above pointcut will select all join points in all methods annotated with the @MySuperSecurityAnnotation annotation in all classes.
 
@@ -262,8 +263,8 @@ Examples of dynamic information available from the JoinPoint object:
 - Currently executing object
 
 ## What is a ProceedingJoinPoint? Which advice type is it used with?
-The following example, also seen earlier, shows the use of the ProceedingJoinPoint class as a parameter to an **around advice. This type is used as the first parameter of a method implementing an around advice.**
-ProceedingJoinPoint is a subclass of JoinPoint.
+The following example, also seen earlier, shows the use of the `ProceedingJoinPoint` class as a parameter to an **around advice. This type is used as the first parameter of a method implementing an around advice.**
+`ProceedingJoinPoint` is a subclass of `JoinPoint`.
 
 An around advice is a special advice that can control when and if a method (or other join point) is executed.
 

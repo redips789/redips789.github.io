@@ -69,46 +69,51 @@ A few levels of interoperability:
 public interface HttpMessageConverter<T>
 Strategy interface that specifies a converter that can convert from and to HTTP requests and responses.
 
-**Short:** HttpMessageConverters convert HTTP requests to objects and back from objects to HTTP responses. Spring has a list of converters that is registered by default but it is customizable – additional implementations may be plugged in.
-Message conversion is a more direct way to transform data produced by a controller into a representation that’s served to a client. When using message conversion, DispatcherServlet doesn’t bother with ferrying model data to a view. In fact, there is no model, and there is no view. There is only data produced by the controller and a resource representation produced when a message converter transforms that data.
+**Short:** `HttpMessageConverters` convert HTTP requests to objects and back from objects to HTTP responses. Spring has a list of converters that is registered by default but it is customizable – additional implementations may be plugged in.
+Message conversion is a more direct way to transform data produced by a controller into a representation that’s served to a client. When using message conversion, `DispatcherServlet` doesn’t bother with ferrying model data to a view. In fact, there is no model, and there is no view. There is only data produced by the controller and a resource representation produced when a message converter transforms that data.
 Spring comes with a variety of message converters:
-- BufferedImageHttpMessageConverter: Converts BufferedImage to and from image binary data;
-- Jaxb2RootElementHttpMessageConverter: Reads and writes XML (either text/xml or application/xml) to and from JAXB2-annotated objects. Registered if JAXB v2 libraries are present on the classpath;
-- MappingJackson2HttpMessageConverter: Reads and writes JSON to and from typed objects or untyped HashMaps. Registered if the Jackson 2 JSON library is present on the classpath;
-- StringHttpMessageConverter: Reads all media types (*/*) into a String. Writes String to text/plain.
+- `BufferedImageHttpMessageConverter`: Converts BufferedImage to and from image binary data;
+- `Jaxb2RootElementHttpMessageConverter`: Reads and writes XML (either text/xml or application/xml) to and from JAXB2-annotated objects. Registered if JAXB v2 libraries are present on the classpath;
+- `MappingJackson2HttpMessageConverter`: Reads and writes JSON to and from typed objects or untyped HashMaps. Registered if the Jackson 2 JSON library is present on the classpath;
+- `StringHttpMessageConverter`: Reads all media types (*/*) into a String. Writes String to text/plain.
 - ...
 
-For example, suppose the client has indicated via the request’s Accept header that it can accept application/json. Assuming that the Jackson JSON library is in the application’s classpath, the object returned from the handler method is given to MappingJacksonHttpMessageConverte r for conversion into a JSON representation to be returned to the client. On the other hand, if the request header indicates that the client prefers text/xml, then Jaxb2RootElementHttpMessageConverter is tasked with producing an XML response to the client.
+For example, suppose the client has indicated via the request’s Accept header that it can accept application/json. Assuming that the Jackson JSON library is in the application’s classpath, the object returned from the handler method is given to `MappingJacksonHttpMessageConverter` for conversion into a JSON representation to be returned to the client. On the other hand, if the request header indicates that the client prefers text/xml, then `Jaxb2RootElementHttpMessageConverter` is tasked with producing an XML response to the client.
 
 ## Is @Controller a stereotype? Is @RestController a stereotype?
 
-@Controller is a stereotype.
+`@Controller` is a stereotype.
+
+```java
 
 @Target(value=TYPE)  
 @Retention(value=RUNTIME)   
 @Documented  
 @Component  
-public @interface Controller
+public @interface Controller {}
 
 @Target(value=TYPE)   
 @Retention(value=RUNTIME)   
 @Documented  
 @Controller  
 @ResponseBody  
-public @interface RestController
-A convenience annotation that is itself annotated with @Controller and @ResponseBody.
+public @interface RestController {}
+    
+```    
+    
+A convenience annotation that is itself annotated with `@Controller` and `@ResponseBody`.
 
 ## What is the difference between @Controller and @RestController?
 
-@Controller result is passed to a view.
-@RestController result is processed by a HttpMessageConverter.
-For a @Controller to act as a @RestController it has to be combined with @ResponseBody.
+`@Controller` result is passed to a view.
+`@RestController` result is processed by a `HttpMessageConverter`.
+For a `@Controller` to act as a `@RestController` it has to be combined with `@ResponseBody`.
 
 ## When do you need to use @ResponseBody?
 
-@RestController is a composed annotation that is itself meta-annotated with @Controller and @ResponseBody to indicate a controller whose every method inherits the type-level @ResponseBody annotation and, therefore, writes directly to the response body versus view resolution and rendering with an HTML template.
-The return value is converted through **HttpMessageConverter** implementations and written to the response. See @ResponseBody.
-**Short**: @ResponseBody is required when you want a controller result to me passed to a message converter rather than to a view resolver.
+`@RestController` is a composed annotation that is itself meta-annotated with `@Controller` and `@ResponseBody` to indicate a controller whose every method inherits the type-level `@ResponseBody` annotation and, therefore, writes directly to the response body versus view resolution and rendering with an HTML template.
+The return value is converted through **HttpMessageConverter** implementations and written to the response. See `@ResponseBody`.
+**Short**: `@ResponseBody` is required when you want a controller result to me passed to a message converter rather than to a view resolver.
 
 ## What are the HTTP status return codes for a successful GET, POST, PUT or DELETE operation?
 
@@ -126,7 +131,7 @@ DELETE
 Direct answer to DELETE may be a 204 No Content or a 202 Accepted (long lasting processing) or 205 Reset Content (DELETE statement was ok but could not be performed). An indirect answer is 200 OK with some response.
 
 ## When do you need to use @ResponseStatus?
-The status code is applied to the HTTP response when the handler method is invoked and overrides status information set by other means, like ResponseEntity or "redirect:". A method with a void return type (or null return value).
+The status code is applied to the HTTP response when the handler method is invoked and overrides status information set by other means, like `ResponseEntity` or "redirect:". A method with a void return type (or null return value).
 
 ```java
 @PostMapping
@@ -140,13 +145,13 @@ There are two places where this can be applied:
 - Controller Methods;
 - Error Handlers;
 
-!Note, that when we set reason, Spring calls HttpServletResponse.sendError(). Therefore, it will send an HTML error page to the client, which makes it a bad fit for REST endpoints. For such cases it is preferable to use a ResponseEntity as a return type and avoid the use of @ResponseStatus altogether.
-Also note, that Spring only uses @ResponseStatus, when the marked method completes successfully (without throwing an Exception).
+!Note, that when we set reason, Spring calls HttpServletResponse.sendError(). Therefore, it will send an HTML error page to the client, which makes it a bad fit for REST endpoints. For such cases it is preferable to use a `ResponseEntity` as a return type and avoid the use of `@ResponseStatus` altogether.
+Also note, that Spring only uses `@ResponseStatus`, when the marked method completes successfully (without throwing an Exception).
 
 ## Where do you need to use @ResponseBody? What about @RequestBody?
 
-@RequestBody 
-You can use the @RequestBody annotation to have the request body read and deserialized into an Object through an HttpMessageConverter. The following example uses a @RequestBody argument: 
+`@RequestBody`
+You can use the `@RequestBody` annotation to have the request body read and deserialized into an Object through an `HttpMessageConverter`. The following example uses a `@RequestBody` argument: 
 
 ```java 
 @PostMapping("/accounts")
@@ -155,9 +160,9 @@ public void handle(@RequestBody Account account) {
 }
 ```
 
-You can use @RequestBody in combination with javax.validation.Valid or Spring’ s @Validated annotation, both of which cause Standard Bean Validation to be applied. By default, validation errors cause a MethodArgumentNotValidException, which is turned into a 400 (BAD_REQUEST) response.
-@ResponseBody
-You can use the @ResponseBody annotation on a method to have the return serialized to the response body through an HttpMessageConverter. The following listing shows an example:
+You can use `@RequestBody` in combination with javax.validation.Valid or Spring’ s `@Validated` annotation, both of which cause Standard Bean Validation to be applied. By default, validation errors cause a `MethodArgumentNotValidException`, which is turned into a 400 (BAD_REQUEST) response.
+`@ResponseBody`
+You can use the `@ResponseBody` annotation on a method to have the return serialized to the response body through an `HttpMessageConverter`. The following listing shows an example:
 
 ```java
 @GetMapping("/accounts/{id}")

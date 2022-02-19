@@ -14,16 +14,16 @@ title: Spring MVC Basics
 
 ## What is the @Controller annotation used for?
 
-The @Controller annotation is a specialization of the @Component annotation. In a web application, the **controllers work between the web layer and the core application layer.** In the Spring MVC framework, controllers are also more like POJO classes with methods; **these methods are known as handlers**, because these are annotated with the @RequestMapping annotation.
-You could also use the **@Component** annotation instead of **@Controller** to create Spring beans in a web application, but in this case, that bean does not have the capability of the Spring MVC framework such as **exception handling at web layer, handler mapping**, and so on.
+The `@Controller` annotation is a specialization of the `@Component` annotation. In a web application, the **controllers work between the web layer and the core application layer.** In the Spring MVC framework, controllers are also more like POJO classes with methods; **these methods are known as handlers**, because these are annotated with the `@RequestMapping` annotation.
+You could also use the `@Component` annotation instead of `@Controller` to create Spring beans in a web application, but in this case, that bean does not have the capability of the Spring MVC framework such as **exception handling at web layer, handler mapping**, and so on.
 
 ## How is an incoming request mapped to a controller and mapped to a method?
 
 When a request is issued to the application:
-- DispatcherServlet of the application receives the request.
-- DispatcherServlet maps the request to a method in a controller.
-- DispatcherServlet holds a list of classes implementing the HandlerMapping interface.
-- DispatcherServlet dispatches the request to the controller.
+- `DispatcherServlet` of the application receives the request.
+- `DispatcherServlet` maps the request to a method in a controller.
+- `DispatcherServlet` holds a list of classes implementing the `HandlerMapping` interface.
+- `DispatcherServlet` dispatches the request to the controller.
 - The method in the controller is executed.
   
 /articles/new 
@@ -33,7 +33,7 @@ Method: /new
 
 ## What is the difference between @RequestMapping and @GetMapping?
 
-@GetMapping is a composed annotation that acts as a shortcut for @RequestMapping(method = RequestMethod.GET).
+`@GetMapping` is a composed annotation that acts as a shortcut for @RequestMapping(method = RequestMethod.GET).
 
 ## What is @RequestParam used for?
 
@@ -50,7 +50,7 @@ public  class  AccountController {
 }
 ```
 
-The @RequestParam annotation is used to annotate parameters to handler methods in order to bind request parameters to method parameters.
+The `@RequestParam` annotation is used to annotate parameters to handler methods in order to bind request parameters to method parameters.
 Assume there is a controller method with the following signature and annotations:
 
 ```java
@@ -80,40 +80,40 @@ public class AccountController {
 ```
 
 **Difference**
-The difference between the @RequestParam annotation and the @PathVariable annotation is that they map different parts of request URLs to handler method arguments.
+The difference between the `@RequestParam` annotation and the `@PathVariable` annotation is that they map different parts of request URLs to handler method arguments.
 
 ## What are the ready-to-use argument types you can use in a controller method?
 
-- WebRequest
-- ServletRequest
-- ServletResponse
-- HttpSession
-- Principle
-- HttpMethod
-- Locale
-- TimeZone
-- java.io
-- HttpEntity
+- `WebRequest`
+- `ServletRequest`
+- `ServletResponse`
+- `HttpSession`
+- `Principle`
+- `HttpMethod`
+- `Locale`
+- `TimeZone`
+- `java.io`
+- `HttpEntity`
 - Collections, like Map<>
-- Errors
-- BindingResult
-- SessionStatus
-- UriComponentsbuilder
+- `Errors`
+- `BindingResult`
+- `SessionStatus`
+- `UriComponentsbuilder`
 
 ###What other annotations might you use on a controller method parameter?
 (You can ignore form-handling annotations for this exam)
 
-- @PathVariable
-- @MatrixVariable: key-value pair in url
-- @RequestParam
-- @CookieValue
-- @RequestBody
-- @RequestHeader
-- @RequestPart: “multipart/form-data”
-- @ModelAttribute
-- @SessionAttribute
-- @SessionAttributes
-- @RequestAttribute
+- `@PathVariable`
+- `@MatrixVariable`: key-value pair in url
+- `@RequestParam`
+- `@CookieValue`
+- `@RequestBody`
+- `@RequestHeader`
+- `@RequestPart`: “multipart/form-data”
+- `@ModelAttribute`
+- `@SessionAttribute`
+- `@SessionAttributes`
+- `@RequestAttribute`
 
 ## What are some valid return types of a controller method?
 

@@ -217,15 +217,15 @@ This endpoint will show the health of the application. If you are doing a databa
 
 | Health Indicator | Key  | Reports|
 | ------- | --- | ---|
-|ApplicationHealthIndicator | none | Always "UP"|
-|DataSourceHealthIndicator | db | "UP" and database type if the database can be contacted; "DOWN" status otherwise|
-|DiskSpaceHealthIndicator | diskSpace |  "UP" and JMS provider name if the message broker can be contacted; "DOWN" otherwise|
-|JmsHealthIndicator | jms | "UP" and JMS provider name if the message broker can be contacted; "DOWN" otherwise|
-|MailHealthIndicator | mail | "UP" and the mail server host and port if the mail server can be contacted; "DOWN" otherwise|
-|MongoHealthIndicator | mongo | "UP" and the MongoDB server version; "DOWN" otherwise |
-|RabbitHealthIndicator | rabbit | "UP" and the RabbitMQ broker version; "DOWN" otherwise|
-|RedisHealthIndicator | redis | "UP" and the Redis server version; "DOWN" otherwise |
-|SolrHealthIndicator | solr | "UP" if the Solr server can be contacted; "DOWN" otherwise |
+|`ApplicationHealthIndicator` | none | Always "UP"|
+|`DataSourceHealthIndicator` | db | "UP" and database type if the database can be contacted; "DOWN" status otherwise|
+|`DiskSpaceHealthIndicator` | diskSpace |  "UP" and JMS provider name if the message broker can be contacted; "DOWN" otherwise|
+|`JmsHealthIndicator` | jms | "UP" and JMS provider name if the message broker can be contacted; "DOWN" otherwise|
+|`MailHealthIndicator` | mail | "UP" and the mail server host and port if the mail server can be contacted; "DOWN" otherwise|
+|`MongoHealthIndicator` | mongo | "UP" and the MongoDB server version; "DOWN" otherwise |
+|`RabbitHealthIndicator` | rabbit | "UP" and the RabbitMQ broker version; "DOWN" otherwise|
+|`RedisHealthIndicator` | redis | "UP" and the Redis server version; "DOWN" otherwise |
+|`SolrHealthIndicator` | solr | "UP" if the Solr server can be contacted; "DOWN" otherwise |
 
 ## What is the Health Indicator status?
 

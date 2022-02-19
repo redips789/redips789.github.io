@@ -18,9 +18,9 @@ An instant repository, also known as a Spring Data repository, is a repository t
 
 You have 2 options:
 - Extend some implementation of repository interface.
-- Annotate the future instant repository class with @RepositoryDefinition
+- Annotate the future instant repository class with `@RepositoryDefinition`
 
-Repositories are defined as interfaces in order for Spring Data to be able to use the JDK dynamic proxy mechanism to create the proxy objects that intercept calls to repositories. With the Spring Data repository interfaces in place, **annotate a Spring configuration class with an annotation @EnableJpaRepositories** to enable the discovery and creation of repositories.
+Repositories are defined as interfaces in order for Spring Data to be able to use the JDK dynamic proxy mechanism to create the proxy objects that intercept calls to repositories. With the Spring Data repository interfaces in place, **annotate a Spring configuration class with an annotation `@EnableJpaRepositories`** to enable the discovery and creation of repositories.
 
 ## What is the naming convention for finder methods in a Spring Data Repository interface?
 
@@ -33,11 +33,11 @@ find(First[count])By[property expression][comparison operator][ordering operator
 
 ## How are Spring Data repositories implemented by Spring at runtime?
 
-For a Spring Data repository a JDK dynamic proxy is created which intercepts all calls to the repository. The default behavior is to route calls to the default repository implementation, which in Spring Data JPA is the SimpleJpaRepository class.
+For a Spring Data repository a JDK dynamic proxy is created which intercepts all calls to the repository. The default behavior is to route calls to the default repository implementation, which in Spring Data JPA is the `SimpleJpaRepository` class.
 
 ## What is @Query used for?
 
-The @Query annotation allows for specifying a query to be used with a Spring Data JPA repository method.
+The `@Query` annotation allows for specifying a query to be used with a Spring Data JPA repository method.
 
 ```java
 @Query("select s from Spitter s where s.email like '%gmail.com'")
