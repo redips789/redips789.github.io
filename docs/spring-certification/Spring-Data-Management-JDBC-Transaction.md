@@ -386,3 +386,10 @@ If the application has multiple JPA entity manager factories that are to be tran
 6. Configure PersistenceAnnotationBeanPostProcessor (if you want to use @PersistenceUnit and @PersistenceContext)
    
 Spring boot has Autoconfigure class called JpaBaseConfiguration, which create this out of the box.
+
+## References
+
+1. [MrR0807 Spring certification notes](https://github.com/MrR0807/SpringCertification5.0)
+2. [Moss Green Spring certification notes](https://mossgreen.github.io/)
+3. [Spring Documentation](https://docs.spring.io/spring-framework/docs/5.3.8/reference/html/)
+4. [Spring Boot Documentation](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)

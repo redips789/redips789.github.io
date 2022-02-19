@@ -128,3 +128,10 @@ For example, you may want to register a bean when:
 `@ConditionalOnResource`: Matches when the specified resources are on the classpath.
 
 `@ConditionalOnWebApplication`: Matches when the application context is a web application context.
+
+## References
+
+1. [MrR0807 Spring certification notes](https://github.com/MrR0807/SpringCertification5.0)
+2. [Moss Green Spring certification notes](https://mossgreen.github.io/)
+3. [Spring Documentation](https://docs.spring.io/spring-framework/docs/5.3.8/reference/html/)
+4. [Spring Boot Documentation](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)

@@ -195,3 +195,10 @@ Annotation that can be specified on a test class that runs Spring Boot based tes
 
 ### How does it interact with @SpringBootApplication and @SpringBootConfiguration?
 When testing Spring Boot applications, this is often not required. Spring Boot’s @*Test annotations search for your primary configuration automatically whenever you do not explicitly define one.The search algorithm works up from the package that contains the test until it finds a class annotated with @SpringBootApplication or @SpringBootConfiguration. As long as you structured your code in a sensible way, your main configuration is usually found. 
+
+## References
+
+1. [MrR0807 Spring certification notes](https://github.com/MrR0807/SpringCertification5.0)
+2. [Moss Green Spring certification notes](https://mossgreen.github.io/)
+3. [Spring Documentation](https://docs.spring.io/spring-framework/docs/5.3.8/reference/html/)
+4. [Spring Boot Documentation](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)

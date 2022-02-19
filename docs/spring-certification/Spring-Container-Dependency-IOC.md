@@ -551,3 +551,10 @@ Bean’s method: #{artistSelector.selectArtist()},#{artistSelector.selectArtist(
 Expressions in @Value annotations are of two types:
 - Expressions starting with $. Such expressions reference a property name in the application’s environment. These expressions are evaluated by the PropertySourcesPlaceholderConfigurer Spring bean prior to bean creation and can only be used in @Value annnotations.
 - Expressions starting with #. Spring Expression Language expressions parsed by a SpEL expression parser and evaluated by a SpEL expression instance.
+
+## References
+
+1. [MrR0807 Spring certification notes](https://github.com/MrR0807/SpringCertification5.0)
+2. [Moss Green Spring certification notes](https://mossgreen.github.io/)
+3. [Spring Documentation](https://docs.spring.io/spring-framework/docs/5.3.8/reference/html/)
+4. [Spring Boot Documentation](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)

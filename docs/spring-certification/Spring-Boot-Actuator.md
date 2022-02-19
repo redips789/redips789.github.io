@@ -254,3 +254,10 @@ management.health.status.http-mapping.FATAL=503
 Spring Boot auto-configures a composite `MeterRegistry` and adds a registry to the composite for each of the supported implementations that it finds on the classpath.
 
 Having a dependency on `micrometer-registry-{system}` in your runtime classpath is enough for Spring Boot to configure the registry.
+
+## References
+
+1. [MrR0807 Spring certification notes](https://github.com/MrR0807/SpringCertification5.0)
+2. [Moss Green Spring certification notes](https://mossgreen.github.io/)
+3. [Spring Documentation](https://docs.spring.io/spring-framework/docs/5.3.8/reference/html/)
+4. [Spring Boot Documentation](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)
