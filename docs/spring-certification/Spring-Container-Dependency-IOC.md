@@ -244,14 +244,14 @@ jdbc.password=doj@123
 
 ```java
 @Configuration
-@PropertySource("classpathL/config/database.properties")
+@PropertySource("classpath:/config/database.properties")
 public class InfraConfig {
     @Bean
     public DataSource dataSource(
             @Value("${jdbc.driver}") String driver,
-            @Value("${jdbc.url") String url,
-            @Value("${jdbc.user") String user,
-            @Value("${jdbc.password") String pwd) {
+            @Value("${jdbc.url}") String url,
+            @Value("${jdbc.username}") String user,
+            @Value("${jdbc.password}") String pwd) {
         DataSource ds = new BasicDataSource();
         ds.setDriverClassName(driver);
         ds.setUrl(url);
