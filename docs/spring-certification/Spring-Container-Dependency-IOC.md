@@ -473,24 +473,24 @@ private int[] intArrayWithDefaults;
 ## What is Spring Expression Language (SpEL for short)?
 
 The Spring Expression Language is an expression language used in the different Spring products, not only in the Spring framework. SpEL expressions are framed with #{ ... }. SpEL has support for:
-Literal expressions
-Boolean and relational operators
-Regular expressions
-Class expressions
-Accessing properties, arrays, lists, maps
-Method invocation
-Relational operators
-Assignment
-Calling constructors
-Bean references
-Array construction
-Inline lists
-Ternary operator
-Variables
-User defined functions
-Collection projection
-Collection selection
-Templated expressions
+- Literal expressions
+- Boolean and relational operators
+- Regular expressions
+- Class expressions
+- Accessing properties, arrays, lists, maps
+- Method invocation
+- Relational operators
+- Assignment
+- Calling constructors
+- Bean references
+- Array construction
+- Inline lists
+- Ternary operator
+- Variables
+- User defined functions
+- Collection projection
+- Collection selection
+- Templated expressions
 
 ## What is the Environment abstraction in Spring?
 
