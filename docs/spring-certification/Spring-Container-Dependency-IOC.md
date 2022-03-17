@@ -473,29 +473,24 @@ private int[] intArrayWithDefaults;
 ## What is Spring Expression Language (SpEL for short)?
 
 The Spring Expression Language is an expression language used in the different Spring products, not only in the Spring framework. SpEL expressions are framed with #{ ... }. SpEL has support for:
-Literal value expressions  
-\#{3.14159}, #{9.87E4}, #{'Hello'}, #{false}  
-Referencing beans, properties, and methods  
-Reference bean by id: #{sgtPeppers} bean whose ID is sgtPeppers  
-Reference bean property: #{sgtPeppers.artist}  
-Bean’s method: #{artistSelector.selectArtist()},#{artistSelector.selectArtist().toUpperCase()}  
-To guard against a NullPointerException, you can use the type-safe operator:  
-\#{artistSelector.selectArtist()?.toUpperCase()}  
-Types in expressions  
-T(java.lang.Math)  
-T(java.lang.Math).PI  
-T(java.lang.Math).random()  
-\#{2 * T(java.lang.Math).PI * circle.radius}  
-\#{disc.title + ' by ' + disc.artist}  
-\#{counter.total == 100}  
-\#{scoreboard.score > 1000 ? "Winner!" : "Loser"}  
-\#{disc.title ?: 'Rattle and Hum'} If disc.title is null, then the expression evaluates to “Rattle and Hum”.  
+Literal expressions
+Boolean and relational operators
 Regular expressions
-\#{admin.email matches '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.com'}  
-Collections
-\#{jukebox.songs[4].title}  
-\#{jukebox.songs[T(java.lang.Math).random() * jukebox.songs.size()].title}  
-\#{jukebox.songs.?[artist eq 'Aerosmith']} Suppose you want a list of all songs in the jukebox where the artist property is Aerosmith.
+Class expressions
+Accessing properties, arrays, lists, maps
+Method invocation
+Relational operators
+Assignment
+Calling constructors
+Bean references
+Array construction
+Inline lists
+Ternary operator
+Variables
+User defined functions
+Collection projection
+Collection selection
+Templated expressions
 
 ## What is the Environment abstraction in Spring?
 
